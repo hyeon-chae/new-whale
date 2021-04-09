@@ -1,0 +1,311 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "-apple-system", "BlinkMacSystemFont", "helvetica", "Apple SD Gothic Neo", sans-serif;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+}
+
+li,
+ol {
+    list-style: none;
+}
+
+a {
+    font-family: "-apple-system", "BlinkMacSystemFont", "helvetica", "Apple SD Gothic Neo", sans-serif;
+    text-decoration: none;
+    color: #292929;
+    display: inline-block;
+}
+
+button {
+    font-family: "-apple-system", "BlinkMacSystemFont", "helvetica", "Apple SD Gothic Neo", sans-serif;
+    cursor: pointer;
+    border: none;
+    background: none;
+    vertical-align: middle;
+    color: #292929;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+img {
+    display: inline-block;
+    background: none;
+    border: none;
+}
+
+textarea {
+    font-family: "-apple-system", "BlinkMacSystemFont", "helvetica", "Apple SD Gothic Neo", sans-serif;
+    border: none;
+    resize: none;
+    font-size: 14px;
+    color: #292929;
+}
+
+// input type search
+input {
+    font-family: "-apple-system", "BlinkMacSystemFont", "helvetica", "Apple SD Gothic Neo", sans-serif;
+    color: #292929;
+
+    &[type=search] {
+
+        /* clears the ‘X’ from Internet Explorer */
+        &::-ms-clear,
+        &::-ms-reveal {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
+        /* clears the ‘X’ from Chrome */
+        &::-webkit-search-decoration,
+        &::-webkit-search-cancel-button,
+        &::-webkit-search-results-button,
+        &::-webkit-search-results-decoration {
+            display: none;
+        }
+    }
+}
+
+// margin
+@for $i from 0 through 30 {
+    .mg-#{$i} {
+        margin: 1px * $i !important;
+    }
+
+    .mg-top-#{$i} {
+        margin-top: 1px * $i !important;
+    }
+
+    .mg-bottom-#{$i} {
+        margin-bottom: 1px * $i !important;
+    }
+
+    .mg-right-#{$i} {
+        margin-right: 1px * $i !important;
+    }
+
+    .mg-left-#{$i} {
+        margin-left: 1px * $i !important;
+    }
+}
+
+// padding
+@for $i from 0 through 30 {
+    .pd-#{$i} {
+        padding: 1px * $i !important;
+    }
+
+    .pd-top-#{$i} {
+        padding-top: 1px * $i !important;
+    }
+
+    .pd-bottom-#{$i} {
+        padding-bottom: 1px * $i !important;
+    }
+
+    .pd-right-#{$i} {
+        padding-right: 1px * $i !important;
+    }
+
+    .pd-left-#{$i} {
+        padding-left: 1px * $i !important;
+    }
+}
+
+// width
+@for $i from 1 through 100 {
+    .width-#{$i} {
+        width: $i * 1% !important;
+    }
+}
+
+// icon
+@for $i from 1 through 100 {
+    .icon-#{$i} {
+        width: $i * 1px !important;
+        height: $i * 1px !important;
+    }
+}
+
+@for $i from 0 through 50 {
+    // font_black
+    .font-#{$i} {
+        font-size: 1px * $i !important;
+        color: #292929;
+    }
+
+    .font-b#{$i} {
+        font-size: 1px * $i !important;
+        color: #292929;
+        font-weight: bold;
+    }
+
+    // font_gray
+    .font-#{$i}-g {
+        font-size: 1px * $i !important;
+        color: #949494;
+    }
+
+    .font-b#{$i}-g {
+        font-size: 1px * $i !important;
+        color: #949494;
+        font-weight: bold;
+    }
+
+    // font_main_color
+    .font-#{$i}-r {
+        font-size: 1px * $i !important;
+        color: #ff4040;
+    }
+
+    .font-b#{$i}-r {
+        font-size: 1px * $i !important;
+        color: #ff4040;
+        font-weight: bold;
+    }
+
+    // font_blue_color
+    .font-#{$i}-b {
+        font-size: 1px * $i !important;
+        color: #097fff;
+    }
+
+    .font-b#{$i}-b {
+        font-size: 1px * $i !important;
+        color: #097fff;
+        font-weight: bold;
+    }
+
+    // font_white_color
+    .font-#{$i}-w {
+        font-size: 1px * $i !important;
+        color: #fff;
+    }
+
+    .font-b#{$i}-w {
+        font-size: 1px * $i !important;
+        color: #fff;
+        font-weight: bold;
+    }
+}
+
+// stick
+.stick-before {
+    &::before {
+        content: '\01C0';
+        padding: 0 8px;
+    }
+}
+
+.stick-after {
+    &::after {
+        content: '\01C0';
+        padding: 0 8px;
+    }
+}
+
+.mid-dot-after {
+    &::after {
+        content: '\00B7';
+        padding: 0 8px;
+    }
+}
+
+// text 줄임
+.text-ellipsis {
+    vertical-align: middle;
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+}
+
+// text 두줄로 줄임
+.text-wrap-ellipsis {
+    // width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* ellipsis line */
+    -webkit-box-orient: vertical;
+    /* webkit 엔진을 사용하지 않는 브라우저를 위한 속성. */
+    /* height = line-height * line = 1.2em * 3 = 3.6em  */
+    // white-space: normal;
+    line-height: 1.2em;
+    height: auto;
+}
+
+// flex 
+.flex-sa {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flex-sb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-sb-s {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.flex-start {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flex-start-s {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.flex-warp {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.flex-warp-s {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-col-start {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.flex-col-start-s {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
