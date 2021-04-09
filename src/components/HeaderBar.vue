@@ -1,14 +1,14 @@
 <template>
   <div class="header-bar flex-sb">
-    <div class="left">
+    <div class="left" v-show="left">
       <button type="button">
         <i class="fas fa-arrow-left font-24"></i>
       </button>
     </div>
-    <div class="center">
-      <p></p>
+    <div class="center" >
+      <p>{{title}}</p>
     </div>
-    <div class="right">
+    <div class="right" v-show="right">
       <button type="button">
         <i class="far fa-trash-alt font-24"></i>
       </button>
@@ -17,8 +17,18 @@
 </template>
 
 <script>
-export default {
 
+export default {
+  props: {
+        title : String,
+        left: Boolean,
+        right: Boolean
+    },
+  data(){
+    return{
+
+    }
+  }
 }
 </script>
 
@@ -38,6 +48,8 @@ export default {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: bold;
   }
   .right{
     position: absolute;

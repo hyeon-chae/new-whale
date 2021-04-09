@@ -5,16 +5,14 @@ const routes = [
   {
     path: '/',
     name: 'main',
-    component: () => import('../views/MainLayout.vue'),
-    children: [
-      // main-list
-      {
-        path: '/main-list',
-        name: '리스트',
-        component: () => import('../views/main/MainList.vue'),
-      },
-    ]
+    component: () => import('../views/main/MainPage.vue'),
   },
+
+  {
+    path: '/login',
+    name: '로그인페이지',
+    component: () => import('../views/login/LoginPage.vue'),
+  }
   
 ]
 
