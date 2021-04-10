@@ -9,7 +9,7 @@
                     <tspan>%</tspan>
                 </text>
             </svg> -->
-            
+            <div class="ex"></div>
         </div>
         <div class="text-area">
             <strong class="title text-ellipsis">{{item.title}}</strong>
@@ -40,11 +40,18 @@ export default {
     // position: absolute;
     // left: -80px;
     // top: -90px;
-    width: 100px;
-    height: 100px;
+    // tspan{
+        //     font-size: 60px;
+    // }
+    // width: 100px;
+    // height: 100px;
     margin-right: 16px;
-    tspan{
-        font-size: 60px;
+    .ex{
+        width: 100px;
+        height: 100px;
+        background: #efefef;
+        border-radius: 50px;
+
     }
 }
 .text-area{

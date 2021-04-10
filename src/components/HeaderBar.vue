@@ -1,7 +1,7 @@
 <template>
   <div class="header-bar flex-sb">
     <div class="left" v-show="left">
-      <button type="button">
+      <button type="button" @click="$router.go(-1)">
         <i class="fas fa-arrow-left font-24"></i>
       </button>
     </div>
