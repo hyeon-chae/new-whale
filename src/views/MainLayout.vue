@@ -1,6 +1,6 @@
 <template>
     <div class="main-layout">
-        <header-bar title="김고래님의 목표!"></header-bar>
+        <header-bar :title="`${$store.state.userName}님의 ${$route.name}`"></header-bar>
 
         <router-view/>
 
@@ -49,7 +49,16 @@ export default {
                     route:'/setting',
                 },
             ],
+            
         }
+    },
+    methods:{
+        setTitle(){
+
+        }
+    },
+    mounted(){
+
     }
 }
 </script>

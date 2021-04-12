@@ -6,33 +6,33 @@ const routes = [
   {
     path: '/',
     name: 'main',
-    redirect: { name: 'mainList' },
+    redirect: { name: '목표 리스트' },
     component: () => import('../views/MainLayout.vue'),
     // main list page
     children: [
        {
         path: '/mainList',
-        name: 'mainList',
+        name: '목표 리스트',
         // component: require('../views/main/MainList.vue').default,
         component: () => import('../views/main/MainListPage.vue'),
       },
       // complete page
       {
         path: '/complete',
-        name: 'complete',
+        name: '완료 목표',
         component: () => import('../views/complete/CompletePage.vue'),
       },
       // report page
       {
         path: '/report',
-        name: 'report',
+        name: '리포트',
         component: () => import('../views/report/ReportPage.vue'),
       },
       
       // setting page
       {
         path: '/setting',
-        name: 'setting',
+        name: '마이페이지',
         component: () => import('../views/setting/SettingPage.vue'),
       },
     ]
