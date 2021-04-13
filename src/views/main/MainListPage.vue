@@ -1,5 +1,5 @@
 <template>
-    <div class="">
+    <div class="main-list-page">
         <main-list-item
             v-for="item in mainList" 
             :key="item.id"
@@ -31,5 +31,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.main-list-page{
+    height: calc(100% - 58px);
+}
 </style>

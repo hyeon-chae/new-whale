@@ -1,6 +1,7 @@
 <template>
     <div class="main-layout">
-        <header-bar :title="`${$store.state.userName}님의 ${$route.name}`"></header-bar>
+        <header-bar :title="$route.name == '목표 리스트' ? `${$store.state.userName}님의 ${$route.name}!` : $route.name "></header-bar>
+        <!-- <header-bar :title="title"></header-bar> -->
 
         <router-view/>
 
@@ -27,35 +28,40 @@ export default {
                     icon:'fas fa-list-ul',
                     name:'List',
                     route:'/',
+                    routeName:'목표 리스트'
                 },
                 {
                     icon:'fas fa-check-circle',
                     name:'Complete',
                     route:'/complete',
+                    routeName:'완료 목표'
                 },
                 {
                     icon:'fas fa-plus',
                     name:'',
                     route:'/addNew',
+                    routeName:''
                 },
                 {
                     icon:'fas fa-chart-bar',
                     name:'Report',
                     route:'/report',
+                    routeName:'리포트'
                 },
                 {
                     icon:'fas fa-cog',
                     name:'Setting',
                     route:'/setting',
+                    routeName:'마이페이지'
                 },
             ],
-            
+
         }
     },
     methods:{
-        setTitle(){
 
-        }
+    },
+    created(){
     },
     mounted(){
 
