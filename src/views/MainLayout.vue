@@ -1,7 +1,6 @@
 <template>
     <div class="main-layout">
         <header-bar :title="$route.name == '목표 리스트' ? `${$store.state.userName}님의 ${$route.name}!` : $route.name "></header-bar>
-        <!-- <header-bar :title="title"></header-bar> -->
 
         <router-view/>
 

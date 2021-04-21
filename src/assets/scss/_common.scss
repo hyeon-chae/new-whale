@@ -75,6 +75,12 @@ input {
         outline: none;
     }
 }
+// sprite img
+.icon {
+    background-image: url('/img/sprite.png');
+    display: inline-block;
+    background-size: 1100px 600px;
+}
 
 // margin
 @for $i from 0 through 30 {

@@ -41,7 +41,7 @@ export default {
     border-radius: 16px 16px 0 0;
     z-index: 10;
     li{
-        width: 52px;
+        width: 62px;
         height: 42px;
         &.active{
             i, span{
@@ -58,10 +58,10 @@ export default {
             color: #929292;
         }
         &:nth-child(2){
-            padding-right: 30px;
+            margin-right: 30px;
         }
         &:nth-child(4){
-            padding-left: 30px;
+            margin-left: 30px;
         }
         &:nth-child(3){
             position: fixed;

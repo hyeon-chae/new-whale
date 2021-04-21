@@ -1,7 +1,7 @@
 <template>
     <div class="">
         <main-list-item
-            v-show="item.rate == 100"
+            v-show="item.totalRate == 100"
             v-for="item in mainList" 
             :key="item.id"
             :item="item"

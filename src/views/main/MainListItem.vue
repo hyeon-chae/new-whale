@@ -62,8 +62,9 @@ export default {
         display: block;
     }
     .reward{
-        font-size: 16px;
+        font-size: 14px;
         margin: 4px 0 3px;
+        color: #6d5de8;
     }
     .rules{
         font-size: 14px;
