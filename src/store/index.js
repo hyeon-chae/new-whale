@@ -22,6 +22,7 @@ export default createStore({
                   name: '김하루',
                   rate: 70,
                   activeStamp: 7,
+                  active: false,
                 },
               ]
             },
@@ -41,11 +42,13 @@ export default createStore({
                   name: '김봄',
                   rate: 70,
                   activeStamp: 7,
+                  active: false,
                 },
                 {
                   name: '김여름',
                   rate: 70,
                   activeStamp: 7,
+                  active: false,
                 },
               ]
             },
@@ -65,6 +68,7 @@ export default createStore({
                   name: '김내일',
                   rate: 100,
                   activeStamp: 90,
+                  active: false,
                 },
               ]
             },
@@ -83,16 +87,19 @@ export default createStore({
                   name: '김산',
                   rate: 50,
                   activeStamp: 5,
+                  active: false,
                 },
                 {
                   name: '김들',
                   rate: 30,
                   activeStamp: 3,
+                  active: false,
                 },
                 {
                   name: '김강',
                   rate: 40,
                   activeStamp: 4,
+                  active: false,
                 },
               ]
             },
@@ -112,6 +119,7 @@ export default createStore({
                   name: '김모레',
                   rate: 100,
                   activeStamp: 30,
+                  active: false,
                 },
               ]
             },

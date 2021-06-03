@@ -1,15 +1,16 @@
 <template>
     <div class="main-list-item flex-start">
         <div class="progress-area">
-            <!-- <svg width="300" height="300">
-                <circle class="bg" cx="50" cy="150" r="125" stroke-width="10" fill="#c0c0c0" opacity=".5" stroke-dasharray="0,300000" transform = " rotate(-90 100 100)"></circle>            
-                <circle class="circle" cx="50" cy="150" r="110" stroke="#fdca6e" stroke-width="10" stroke-linecap="round" stroke-dasharray="0,300000" fill="#fff" transform = " rotate(-90 100 100)"/>
-                <text x="150" y="150" text-anchor="middle" fill="#6d5ce8">
-                    <tspan class="rate">57</tspan>
-                    <tspan>%</tspan>
-                </text>
-            </svg> -->
-            <div class="ex"></div>
+            <div class="progress-circle">
+                <svg>
+                    <circle class="bg" cx="60" cy="60" r="45" />
+                    <circle class="circle-rate" cx="60" cy="60" r="55" />
+                </svg>
+            </div>
+            <div class="circle-rate-num">
+                <span>{{item.totalRate}}</span>
+                <span>%</span>
+            </div>
         </div>
         <div class="text-area">
             <strong class="title text-ellipsis">{{item.title}}</strong>
@@ -24,7 +25,33 @@
 <script>
 export default {
     props:{
-        item: Array
+        item: Array,
+    },
+    data(){
+        return{
+            circle: 360,
+        }
+    }, 
+    mounted(){
+        this.progressCircleLoad()
+    },
+    methods:{
+        progressCircleLoad(){
+            const onCircle = document.querySelector('.circle-rate');
+            const num = this.item.totalRate;
+
+            const rate = this.circle - (360 * num / 100);
+                onCircle.style.strokeDashoffset = rate;
+                console.log(onCircle, num, rate);
+            // if( num == null){
+            //     onCircle.style.strokeDashoffset = 360;
+            // }
+            // else{
+            //     const rate = this.circle - (360 * num / 100);
+            //     onCircle.style.strokeDashoffset = rate;
+            //     console.log(onCircle, num, rate);
+            // }
+        }
     }
 
 }
@@ -36,26 +63,63 @@ export default {
 
 }
 .progress-area{
-    // transform: scale(.4);
-    // position: absolute;
-    // left: -80px;
-    // top: -90px;
-    // tspan{
-        //     font-size: 60px;
-    // }
-    // width: 100px;
-    // height: 100px;
-    margin-right: 16px;
-    .ex{
-        width: 100px;
-        height: 100px;
-        background: #efefef;
-        border-radius: 50px;
+    position: relative;
+    .progress-circle{
+        display: flex;
+        margin-right: 10px;
+        svg {
+            width: 120px;
+            height: 120px;
+            // margin: 1em;
+        }
+        .bg {
+            fill: none;
+            stroke-width: 10px;
+            stroke: #efefef;
+        }
+        .circle-rate {
+            fill: none;
+            stroke-width: 5px;
+            stroke-linecap: round;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+            stroke-dasharray: 360;
+            // stroke-dashoffset: 360;
+            // stroke-dashoffset: 180;
+            stroke: #fdca6f;
+            transition: .4s ease-in;
+            // animation: progress 1s ease-out;
+        }
 
+        // @keyframes progress {
+        //   from {
+        //       stroke-dashoffset: 360;
+        //   }
+        //   to {
+        //       stroke-dashoffset: 100;
+        //   }
+        // }
+    }  
+    .circle-rate-num{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        // transition: .4s;
+        span{
+            font-size: 28px;
+            font-weight: 200;
+            color: #6d5de8;
+            &:last-child{
+                font-size: 12px;
+                margin-left: 2px;
+            }
+        }
     }
+
 }
 .text-area{
-    width: calc(100% - 120px);
+    width: calc(100% - 130px);
     .title{
         font-size: 16px;
         width: 100%;
