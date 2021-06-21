@@ -15,7 +15,7 @@ export default createStore({
                   '하루 깜박하면, 스탬프 하나 회수',
                   
               ],
-              totalRate: 70,
+              totalRate: 75,
               basicStamp: 10,
               group: [
                 {
@@ -35,7 +35,7 @@ export default createStore({
                   '주말엔 1시간',
                   
               ],
-              totalRate: 30,
+              totalRate: 50,
               basicStamp: 20,
               group: [
                 {

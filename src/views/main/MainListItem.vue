@@ -4,7 +4,7 @@
             <div class="progress-circle">
                 <svg>
                     <circle class="bg" cx="60" cy="60" r="45" />
-                    <circle class="circle-rate" cx="60" cy="60" r="55" />
+                    <circle class="circle-rate" cx="60" cy="60" r="55" :style="`stroke-dashoffset:${circle_rate}`"/>
                 </svg>
             </div>
             <div class="circle-rate-num">
@@ -30,30 +30,23 @@ export default {
     data(){
         return{
             circle: 360,
+            circle_rate: 0, 
         }
     }, 
     mounted(){
         this.progressCircleLoad()
+        
     },
     created(){
     },
     methods:{
         progressCircleLoad(){
             const onCircle = document.querySelector('.circle-rate');
-            const num = this.item.totalRate;
+            let num = this.item.totalRate;
 
-            let rate = this.circle - (360 * num / 100);
-                onCircle.style.strokeDashoffset = rate;
-                console.log(onCircle, num, rate);
-            // if( num == null){
-            //     onCircle.style.strokeDashoffset = 360;
-            // }
-            // else{
-            //     const rate = this.circle - (360 * num / 100);
-            //     onCircle.style.strokeDashoffset = rate;
-            //     console.log(onCircle, num, rate);
-            // }
-        }
+            this.circle_rate = this.circle - (360 * num / 100) + 5;           
+        },
+
     }
 
 
