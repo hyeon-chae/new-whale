@@ -25,7 +25,7 @@
 <script>
 export default {
     props:{
-        item: Array,
+        item: Object,
     },
     data(){
         return{
@@ -35,12 +35,14 @@ export default {
     mounted(){
         this.progressCircleLoad()
     },
+    created(){
+    },
     methods:{
         progressCircleLoad(){
             const onCircle = document.querySelector('.circle-rate');
             const num = this.item.totalRate;
 
-            const rate = this.circle - (360 * num / 100);
+            let rate = this.circle - (360 * num / 100);
                 onCircle.style.strokeDashoffset = rate;
                 console.log(onCircle, num, rate);
             // if( num == null){
@@ -53,6 +55,7 @@ export default {
             // }
         }
     }
+
 
 }
 </script>
