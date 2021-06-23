@@ -84,17 +84,17 @@ export default {
             // stroke-dashoffset: 180;
             stroke: #fdca6f;
             transition: .4s ease-in;
-            // animation: progress 1s ease-out;
+            animation: progress 1s ease-out;
         }
 
-        // @keyframes progress {
-        //   from {
-        //       stroke-dashoffset: 360;
-        //   }
-        //   to {
-        //       stroke-dashoffset: 100;
-        //   }
-        // }
+        @keyframes progress {
+          from {
+              stroke-dashoffset: 360;
+          }
+          to {
+              stroke-dashoffset: 100;
+          }
+        }
     }  
     .circle-rate-num{
         position: absolute;
