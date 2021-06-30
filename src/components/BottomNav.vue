@@ -65,9 +65,10 @@ export default {
         }
         &:nth-child(3){
             position: fixed;
-            bottom: 24px;
+            bottom: 10px;
             box-shadow: 2px 2px 16px 2px rgba(0, 0, 0, 0.1);
             background: #fff9d8;
+            // background: linear-gradient(69deg, #fdca6f 11%, #fff9d8 91%);;
             // background: #fdca6f;
             padding: 10px;
             border-radius: 50%;

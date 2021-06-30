@@ -35,15 +35,13 @@ export default {
     }, 
     mounted(){
         this.progressCircleLoad()
-        
     },
     created(){
     },
     methods:{
         progressCircleLoad(){
-            const onCircle = document.querySelector('.circle-rate');
+            // const onCircle = document.querySelector('.circle-rate');
             let num = this.item.totalRate;
-
             this.circle_rate = this.circle - (360 * num / 100) + 5;           
         },
 
@@ -88,12 +86,12 @@ export default {
         }
 
         @keyframes progress {
-          from {
-              stroke-dashoffset: 360;
-          }
-          to {
-              stroke-dashoffset: 100;
-          }
+            from {
+                stroke-dashoffset: 360;
+            }
+            to {
+                stroke-dashoffset: circle_rate;
+            }
         }
     }  
     .circle-rate-num{

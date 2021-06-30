@@ -24,12 +24,8 @@
                     <div class="progress-circle">
                         <svg>
                             <circle class="bg" cx="125" cy="125" r="110" />
-                            <circle class="circle-rate" cx="125" cy="125" r="120" />
+                            <circle class="circle-rate" cx="125" cy="125" r="120" :style="`stroke-dashoffset:${circle_rate}`"/>
                         </svg>
-                         <!-- <svg>
-                            <circle class="bg" cx="60" cy="60" r="45" />
-                            <circle class="circle-rate" cx="60" cy="60" r="55" />
-                        </svg> -->
                     </div>
                     <div class="circle-rate-num">
                         <span>{{listItem.totalRate}}</span>
@@ -71,7 +67,7 @@
                 <div class="progress-bar-area">
                     <div class="progress-bar">
                         <div class="bar bg"></div>
-                        <div class="bar on-bar"></div>
+                        <div class="bar on-bar" :style="`width: ${item.rate}%`"></div>
                     </div>
                     <div 
                         class="arrow-area" 
@@ -109,6 +105,7 @@
 export default {
     props:{
         listItem: Object,
+        circle_rate: Number,
     },
      components:{
          },
@@ -120,9 +117,11 @@ export default {
             imgStamp: {
                 active: 'stamp-active',
                 inactive:'stamp-bg'
-            }
+            },
         }
     }, 
+    mounted(){
+    },
     methods:{
         scrollUpEvent(event){
             // console.log('event.srcElement.scrollTop', event.srcElement.scrollTop);
@@ -155,7 +154,7 @@ export default {
             else{
                 this.selected = false;
             }
-        }
+        },
     }
 }
 </script>
@@ -311,16 +310,16 @@ export default {
                     // stroke-dashoffset: 180;
                     stroke: #fdca6f;
                     transition: .4s ease-in;
-                    // animation: progress 1s ease-out;
+                    animation: progress 1s ease-out;
                 }
-                // @keyframes progress {
-                //     from {
-                //         stroke-dashoffset: 360;
-                //     }
-                //     to {
-                //         stroke-dashoffset: 100;
-                //     }
-                // }
+                @keyframes progress {
+                    from {
+                        stroke-dashoffset: 755;
+                    }
+                    to {
+                        stroke-dashoffset: circle_rate;
+                    }
+                }
             }
             .circle-rate-num{
                 position: absolute;
@@ -376,6 +375,7 @@ export default {
     
     .group-item{
         padding: 15px 20px;
+        border-top: 1px solid #eee;
         .name-area{
             padding-bottom: 20px;
             span{

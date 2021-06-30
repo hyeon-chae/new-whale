@@ -11,7 +11,7 @@
         
         <div>
             <main-list-item
-                @click="showListDetail(item)"
+                @click="showListDetail(item, item.totalRate)"
                 v-show="checkAll ? item.totalRate : item.totalRate !== 100 "
                 v-for="item in mainList" 
                 :key="item.id"
@@ -22,6 +22,7 @@
         <list-item-detail
             v-show="visibleDetail"
             :listItem="listItem"
+            :circle_rate="circle_rate"
             @close="visibleDetail = false"
         ></list-item-detail>
     </div>  
@@ -42,7 +43,9 @@ export default {
         return{
             checkAll: true,
             visibleDetail: false,
-            listItem: {}
+            listItem: {}, 
+            circle_rate: 0,
+            circle: 755,
         }
     },
     computed:{
@@ -54,10 +57,13 @@ export default {
         checkShowAll(){
             this.checkAll = !this.checkAll;
         },
-        showListDetail(item){
+        showListDetail(item, rate){
             this.visibleDetail = true;
             this.listItem = item;
-            console.log(item);
+            let num = rate;
+            this.circle_rate = this.circle - (755 * num / 100);           
+            console.log(num, this.circle_rate);
+            // console.log(item);
         }
     }
 }
