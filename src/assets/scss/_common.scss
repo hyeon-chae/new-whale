@@ -28,8 +28,8 @@ button {
     background: none;
     vertical-align: middle;
     color: #292929;
-
-    &:focus {
+    &:focus,
+    &:active {
         outline: 0;
     }
 }
